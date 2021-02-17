@@ -16,7 +16,7 @@ $result = mysqli_query($db, "SELECT * FROM tb_country");
 </head>
 
 <body>
-    <h1>Daftar Siswa<h1>
+    <h1>Countries<h1>
             <table border="1" cellpadding="10" cellspacing="0">
                 <tr>
                     <th>No</th>
