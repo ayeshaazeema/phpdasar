@@ -20,8 +20,8 @@ $result = mysqli_query($db, "SELECT * FROM tb_country");
             <table border="1" cellpadding="10" cellspacing="0">
                 <tr>
                     <th>No</th>
-                    <th>Country Flag</th>
-                    <th>Country Name</th>
+                    <th>Flag</th>
+                    <th>Name</th>
                     <th>Language</th>
                     <th>Capital City</th>
                 </tr>
