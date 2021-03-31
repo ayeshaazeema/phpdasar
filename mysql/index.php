@@ -4,7 +4,7 @@ require 'functions.php';
 
 // ambil data dari table
 // * artinya all
-$siswa = query("SELECT * FROM tb_siswa");
+$siswa = get("SELECT * FROM tb_siswa");
 
 ?>
 
@@ -19,31 +19,40 @@ $siswa = query("SELECT * FROM tb_siswa");
 
 <body>
     <h1>Daftar Siswa<h1>
-            <table border="1" cellpadding="10" cellspacing="0">
-                <tr>
-                    <th>No</th>
-                    <th>Gambar</th>
-                    <th>Nama</th>
-                    <th>Kelas</th>
-                    <th>Email</th>
-                </tr>
-
-                <?php $i = 1; ?>
-
-                <?php foreach ($siswa as $row) : ?>
-
+            <a href="tambah.php">Tambah Data Siswa</a>
+            <p>
+                <table border="1" cellpadding="10" cellspacing="0">
                     <tr>
-                        <td><?= $i; ?></td>
-                        <td><img src="img/<?= $row["gambar_siswa"]; ?>" width="50"></td>
-                        <td><?= $row["nama_siswa"]; ?></td>
-                        <td><?= $row["kelas_siswa"]; ?></td>
-                        <td><?= $row["email_siswa"]; ?></td>
+                        <th>No</th>
+                        <th>Aksi</th>
+                        <th>Gambar</th>
+                        <th>Nama</th>
+                        <th>Kelas</th>
+                        <th>Email</th>
                     </tr>
 
-                    <?php $i++ ?>
+                    <?php $i = 1; ?>
 
-                <?php endforeach; ?>
-            </table>
+                    <?php foreach ($siswa as $row) : ?>
+
+                        <tr>
+                            <td><?= $i; ?></td>
+
+                            <td>
+                                <a href="update.php?id=<?= $row["id_siswa"]; ?>">Ubah | </a>
+                                <a href="delete.php?id=<?= $row["id_siswa"]; ?>">Hapus</a>
+                            </td>
+
+                            <td><img src="img/<?= $row["gambar_siswa"]; ?>" width="50"></td>
+                            <td><?= $row["nama_siswa"]; ?></td>
+                            <td><?= $row["kelas_siswa"]; ?></td>
+                            <td><?= $row["email_siswa"]; ?></td>
+                        </tr>
+
+                        <?php $i++ ?>
+
+                    <?php endforeach; ?>
+                </table>
 </body>
 
 </html>
