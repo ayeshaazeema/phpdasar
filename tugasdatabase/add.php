@@ -8,7 +8,7 @@ if (isset($_POST["submit"])) {
 
         echo "
             <script>
-            alert('Data berhasil ditambahkan!');
+            alert('Data successfully added!');
             document.location.href = 'index.php';
             </script>
         ";
@@ -16,7 +16,7 @@ if (isset($_POST["submit"])) {
 
         echo "
             <script>
-            alert('Data gagal ditambahkan!');
+            alert('Data failed to be added!');
             document.location.href = 'index.php';
             </script>
         ";
